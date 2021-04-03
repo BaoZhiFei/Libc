@@ -35,10 +35,6 @@
 #include <sys/cdefs.h>
 #include <sysexits.h>
 
-#if DARWIN_TAPI
-#include "tapi.h"
-#endif
-
 /*!
  * @enum
  * Additional POSIX-flavor error codes that are meaningful to Darwin. These

@@ -71,7 +71,7 @@
  * individual preprocessor macros in this header that declare new behavior as
  * required.
  */
-#define DARWIN_API_VERSION 20191015u
+#define DARWIN_API_VERSION 20181020u
 
 #if !DARWIN_BUILDING_LIBSYSTEM_DARWIN
 #define DARWIN_API_AVAILABLE_20170407 \
@@ -80,18 +80,10 @@
 		API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), watchos(6.0))
 #define DARWIN_API_AVAILABLE_20181020 \
 		API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), watchos(6.0))
-#define DARWIN_API_AVAILABLE_20181020 \
-		API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), watchos(6.0))
-#define DARWIN_API_AVAILABLE_20190830 \
-		API_AVAILABLE(macos(10.15.2), ios(13.3), tvos(13.3), watchos(6.1.1))
-#define DARWIN_API_AVAILABLE_20191015 \
-		API_AVAILABLE(macos(10.15.2), ios(13.3), tvos(13.3), watchos(6.1.1))
 #else
 #define DARWIN_API_AVAILABLE_20170407
 #define DARWIN_API_AVAILABLE_20180727
 #define DARWIN_API_AVAILABLE_20181020
-#define DARWIN_API_AVAILABLE_20190830
-#define DARWIN_API_AVAILABLE_20191015
 #endif
 
 /*!

@@ -71,14 +71,6 @@ typedef struct _errno_desc {
 	}
 
 #pragma mark Top-Level Statics
-static const errno_desc_t _zero = {
-	.ed_error = 0,
-	.ed_sysexit = 0,
-	.ed_flags = 0,
-	.ed_sym = "0",
-	.ed_str = "successful termination",
-};
-
 static const errno_desc_t _negative_one = {
 	.ed_error = __ENEG_ONE,
 	.ed_sysexit = EXIT_FAILURE,
@@ -314,10 +306,6 @@ _find_error(int code)
 static const errno_desc_t *
 _find_sysexit(int code)
 {
-	if (code == 0) {
-		return &_zero;
-	}
-
 	if (code == EX_BADRECEIPT_NP) {
 		return &_badreceipt;
 	}
@@ -365,16 +353,9 @@ strerror_np(int code)
 }
 
 const char *
-strexit_np(int code)
-{
-	const errno_desc_t *de = _find_sysexit(code);
-	return de->ed_str;
-}
-
-const char *
 symerror_np(int code)
 {
-	const errno_desc_t *de = _find_error(code);
+	const errno_desc_t *de = _find_error(code);;
 	return de->ed_sym;
 }
 
